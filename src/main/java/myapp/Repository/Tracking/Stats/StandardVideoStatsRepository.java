@@ -1,5 +1,8 @@
 
-package myapp;
+package myapp.Repository.Tracking.Stats;
+
+import myapp.Data.VideoStats.VideoStatsDataProviderNoSuchVideoException;
+import myapp.Repository.Videos.VideoStats;
 
 public final class StandardVideoStatsRepository implements VideoStatsRepository {
 
@@ -10,30 +13,56 @@ public final class StandardVideoStatsRepository implements VideoStatsRepository 
     }
 
     public Void reportVideoPlayed(String id, Float percentage) {
-        // TODO: need to handle no such element
-        VideoStats existingStats = dataProvider.get(id);
-        existingStats.timesPlayed++;
-        if (percentage > 0.6) {
-            existingStats.timesFinished++;
-        }
-        dataProvider.save(id, existingStats);
+    	try {
+    		VideoStats existingStats = dataProvider.get(id);
+    		existingStats.timesPlayed++;
+            if (percentage > 0.6) {
+                existingStats.timesFinished++;
+            }
+            dataProvider.save(id, existingStats);
+    	} catch (VideoStatsDataProviderNoSuchVideoException e) {
+    		if (percentage > 0.6) {
+    			dataProvider.save(id, new VideoStats(1, 1, 1, 0));
+    		} else {
+    			dataProvider.save(id, new VideoStats(1, 0, 1, 0));
+    		}
+    	} catch(Exception e) {
+    		e.printStackTrace();
+    	}
+		return null;   
     }
 
     public Void reportVideoMarked(String id, VideoTag tag) {
-        // TODO: need to handle no such element
-        VideoStats existingStats = dataProvider.get(id);
-        switch (tag) {
-            case VideoTag.OFF_VOCAL:
+		try {
+			VideoStats existingStats = dataProvider.get(id);
+			switch (tag) {
+            case OFF_VOCAL:
                 existingStats.timesMarkedOffVocal++;
                 dataProvider.save(id, existingStats);
                 break;
-            case VideoTag.WITH_VOCAL:
+            case WITH_VOCAL:
                 existingStats.timesMarkedWithVocal++;
                 dataProvider.save(id, existingStats);
                 break;
             default:
-                return;
-        }
+                return null;
+			}
+		} catch (VideoStatsDataProviderNoSuchVideoException e) {
+			switch (tag) {
+            case OFF_VOCAL:
+    			dataProvider.save(id, new VideoStats(0, 0, 1, 0));
+                break;
+            case WITH_VOCAL:
+    			dataProvider.save(id, new VideoStats(0, 0, 0, 1));
+                break;
+            default:
+                return null;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return null;
     }
 
 }

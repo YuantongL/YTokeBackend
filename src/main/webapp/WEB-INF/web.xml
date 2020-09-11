@@ -7,7 +7,7 @@
     
     <servlet>
 	    <servlet-name>videos</servlet-name>
-	    <servlet-class>myapp.VideosServlet</servlet-class>
+	    <servlet-class>myapp.Servlet.Videos.VideosServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>videos</servlet-name>
@@ -16,7 +16,7 @@
 
     <servlet>
         <servlet-name>videos.popular</servlet-name>
-        <servlet-class>myapp.PopularVideosServlet</servlet-class>
+        <servlet-class>myapp.Servlet.Videos.PopularVideosServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>videos.popular</servlet-name>
@@ -25,7 +25,7 @@
 
     <servlet>
         <servlet-name>video.stats.tag</servlet-name>
-        <servlet-class>myapp.VideoTagServlet</servlet-class>
+        <servlet-class>myapp.Servlet.Stats.VideoTagServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>video.stats.tag</servlet-name>
@@ -34,7 +34,7 @@
 
     <servlet>
         <servlet-name>video.stats.impression</servlet-name>
-        <servlet-class>myapp.VideoImpressionServlet</servlet-class>
+        <servlet-class>myapp.Servlet.Stats.VideoImpressionServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>video.stats.impression</servlet-name>

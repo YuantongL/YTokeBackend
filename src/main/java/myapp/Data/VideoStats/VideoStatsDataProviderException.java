@@ -1,5 +1,5 @@
 
-package myapp;
+package myapp.Data.VideoStats;
 
 import java.lang.Exception;
 

@@ -1,5 +1,6 @@
 
-package myapp;
+package myapp.Repository.Videos;
+import myapp.Repository.Tracking.Stats.VideoTag;
 
 public final class VideoStats {
     
@@ -17,11 +18,9 @@ public final class VideoStats {
 
     public VideoTag[] tags() {
         if (timesMarkedWithVocal > timesMarkedOffVocal) {
-            return new VideoTag[] { VideoTag.withVocal };
+            return new VideoTag[] { VideoTag.WITH_VOCAL };
         } else {
-            return new VideoTag[] { VideoTag.offVocal };
-        } else {
-            return new VideoTag[] {};
+            return new VideoTag[] { VideoTag.OFF_VOCAL };
         }
     } 
 }

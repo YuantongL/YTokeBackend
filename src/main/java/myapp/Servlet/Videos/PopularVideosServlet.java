@@ -1,5 +1,6 @@
 
-package myapp;
+
+package myapp.Servlet.Videos;
 
 import java.io.IOException;
 import javax.servlet.http.HttpServlet;
