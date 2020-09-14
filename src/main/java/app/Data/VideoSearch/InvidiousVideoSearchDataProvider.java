@@ -27,12 +27,12 @@ public final class InvidiousVideoSearchDataProvider implements VideoSearchDataPr
     		.build();
     	Response response = client.newCall(request).execute();
     	String responseString = response.body().string();
-    	ArrayList<InvidiousVideo> invidiousResponse = objectMapper.readValue(responseString, new TypeReference<List<InvidiousVideo>>() {});	
+    	List<InvidiousVideo> invidiousResponse = objectMapper.readValue(responseString, new TypeReference<List<InvidiousVideo>>() {});	
         List<Video> result = convertFrom(invidiousResponse);
         return result;
     }
     
-    private List<Video> convertFrom(ArrayList<InvidiousVideo> response) {
+    private List<Video> convertFrom(List<InvidiousVideo> response) {
     	List<Video> videoList = new ArrayList<>();
     	
     	for (InvidiousVideo invidiousVideo: response) {
