@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="appengine-try-java" />
+        <module name="ytoke-backend" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="appengine-try-java" target="1.8" />
+      <module name="ytoke-backend" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

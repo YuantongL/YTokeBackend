@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/appengine-try-java.iml" filepath="$PROJECT_DIR$/appengine-try-java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ytoke-backend.iml" filepath="$PROJECT_DIR$/ytoke-backend.iml" />
     </modules>
   </component>
 </project>

@@ -18,8 +18,8 @@
   <packaging>war</packaging>
   <version>1.0</version>
 
-  <groupId>com.google.appengine.demos</groupId>
-  <artifactId>appengine-try-java</artifactId>
+  <groupId>com.google.appengine.ytoke</groupId>
+  <artifactId>ytoke-backend</artifactId>
 
   <!-- Parent POM defines common plugins and properties. -->
   <parent>

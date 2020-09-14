@@ -1,5 +1,5 @@
 
-package myapp.Repository.Videos;
+package app.Repository.Videos;
 
 import java.util.List;
 

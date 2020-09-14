@@ -1,5 +1,5 @@
 
-package myapp.Data.VideoSearch;
+package app.Data.VideoSearch;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

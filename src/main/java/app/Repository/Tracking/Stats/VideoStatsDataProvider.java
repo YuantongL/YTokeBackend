@@ -1,10 +1,10 @@
 
-package myapp.Repository.Tracking.Stats;
+package app.Repository.Tracking.Stats;
 
 import java.util.List;
 
-import myapp.Repository.Videos.Video;
-import myapp.Repository.Videos.VideoStats;
+import app.Repository.Videos.Video;
+import app.Repository.Videos.VideoStats;
 
 public interface VideoStatsDataProvider {
 

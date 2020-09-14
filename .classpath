@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" output="target/appengine-try-java/WEB-INF/classes" path="src/main/java">
+	<classpathentry kind="src" output="target/ytoke-backend/WEB-INF/classes" path="src/main/java">
 		<attributes>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
@@ -29,5 +29,5 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="output" path="target/appengine-try-java/WEB-INF/classes"/>
+	<classpathentry kind="output" path="target/ytoke-backend/WEB-INF/classes"/>
 </classpath>

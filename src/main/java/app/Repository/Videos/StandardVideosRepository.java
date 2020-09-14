@@ -1,10 +1,10 @@
 
-package myapp.Repository.Videos;
+package app.Repository.Videos;
 
 import java.lang.Exception;
 import java.util.List;
 
-import myapp.Repository.Tracking.Stats.VideoStatsDataProvider;
+import app.Repository.Tracking.Stats.VideoStatsDataProvider;
 
 public final class StandardVideosRepository implements VideosRepository {
     

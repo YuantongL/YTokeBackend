@@ -1,15 +1,15 @@
 
-package myapp.Servlet.Stats;
+package app.Servlet.Stats;
 
 import java.io.IOException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import myapp.Data.VideoStats.StandardVideoStatsDataProvider;
-import myapp.Repository.Tracking.Stats.StandardVideoStatsRepository;
-import myapp.Repository.Tracking.Stats.VideoStatsRepository;
-import myapp.Repository.Tracking.Stats.VideoTag;
+import app.Data.VideoStats.StandardVideoStatsDataProvider;
+import app.Repository.Tracking.Stats.StandardVideoStatsRepository;
+import app.Repository.Tracking.Stats.VideoStatsRepository;
+import app.Repository.Tracking.Stats.VideoTag;
 
 public final class VideoTagServlet extends HttpServlet {
 	

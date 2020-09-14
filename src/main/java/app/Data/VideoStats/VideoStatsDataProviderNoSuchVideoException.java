@@ -1,5 +1,5 @@
 
-package myapp.Data.VideoStats;
+package app.Data.VideoStats;
 
 public class VideoStatsDataProviderNoSuchVideoException extends Exception {
 	public VideoStatsDataProviderNoSuchVideoException(String errorMessage) {

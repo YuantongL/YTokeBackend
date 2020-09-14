@@ -1,7 +1,7 @@
 
-package myapp.Data.VideoSearch;
+package app.Data.VideoSearch;
 
-import myapp.Repository.Videos.*;
+import app.Repository.Videos.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +21,6 @@ public final class InvidiousVideoSearchDataProvider implements VideoSearchDataPr
     	}
     	
     	String url = String.format("https://www.invidio.us/api/v1/search?q=%s&page=%d", query, page);
-    	System.out.println(String.format("Requesting url %s", url));
     	Request request = new Request.Builder()
     		.url(url)
     		.method("GET", null)
@@ -29,9 +28,7 @@ public final class InvidiousVideoSearchDataProvider implements VideoSearchDataPr
     	Response response = client.newCall(request).execute();
     	String responseString = response.body().string();
     	ArrayList<InvidiousVideo> invidiousResponse = objectMapper.readValue(responseString, new TypeReference<List<InvidiousVideo>>() {});	
-    	System.out.println(invidiousResponse);
         List<Video> result = convertFrom(invidiousResponse);
-        System.out.println(result);
         return result;
     }
     

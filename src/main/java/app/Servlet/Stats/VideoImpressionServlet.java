@@ -1,14 +1,14 @@
 
-package myapp.Servlet.Stats;
+package app.Servlet.Stats;
 
 import java.io.IOException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import myapp.Data.VideoStats.StandardVideoStatsDataProvider;
-import myapp.Repository.Tracking.Stats.StandardVideoStatsRepository;
-import myapp.Repository.Tracking.Stats.VideoStatsRepository;
+import app.Data.VideoStats.StandardVideoStatsDataProvider;
+import app.Repository.Tracking.Stats.StandardVideoStatsRepository;
+import app.Repository.Tracking.Stats.VideoStatsRepository;
 
 public final class VideoImpressionServlet extends HttpServlet {
 	

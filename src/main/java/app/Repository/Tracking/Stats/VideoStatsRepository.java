@@ -1,5 +1,5 @@
 
-package myapp.Repository.Tracking.Stats;
+package app.Repository.Tracking.Stats;
 
 public interface VideoStatsRepository {
     

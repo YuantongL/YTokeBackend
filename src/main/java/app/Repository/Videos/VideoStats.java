@@ -1,6 +1,7 @@
 
-package myapp.Repository.Videos;
-import myapp.Repository.Tracking.Stats.VideoTag;
+package app.Repository.Videos;
+
+import app.Repository.Tracking.Stats.VideoTag;
 
 public final class VideoStats {
     

@@ -1,9 +1,9 @@
 
-package myapp.Data.VideoStats;
+package app.Data.VideoStats;
 
-import myapp.Repository.Tracking.Stats.VideoStatsDataProvider;
-import myapp.Repository.Videos.Video;
-import myapp.Repository.Videos.VideoStats;
+import app.Repository.Tracking.Stats.VideoStatsDataProvider;
+import app.Repository.Videos.Video;
+import app.Repository.Videos.VideoStats;
 
 import java.lang.Exception;
 import java.util.ArrayList;

@@ -1,9 +1,9 @@
 
-package myapp.Servlet.Videos;
+package app.Servlet.Videos;
 
 import java.util.List;
 
-import myapp.Repository.Videos.*;
+import app.Repository.Videos.*;
 
 public final class VideosServletResult {
     

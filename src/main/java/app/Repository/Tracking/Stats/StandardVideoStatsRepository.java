@@ -1,8 +1,8 @@
 
-package myapp.Repository.Tracking.Stats;
+package app.Repository.Tracking.Stats;
 
-import myapp.Data.VideoStats.VideoStatsDataProviderNoSuchVideoException;
-import myapp.Repository.Videos.VideoStats;
+import app.Data.VideoStats.VideoStatsDataProviderNoSuchVideoException;
+import app.Repository.Videos.VideoStats;
 
 public final class StandardVideoStatsRepository implements VideoStatsRepository {
 
