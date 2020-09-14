@@ -1,6 +1,10 @@
 
 package app.Repository.Videos;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import app.Repository.Tracking.Stats.VideoTag;
 
 public final class VideoStats {
@@ -17,11 +21,18 @@ public final class VideoStats {
         this.timesMarkedWithVocal = timesMarkedWithVocal;
     }
 
-    public VideoTag[] tags() {
+    public List<VideoTag >tags() {
         if (timesMarkedWithVocal > timesMarkedOffVocal) {
-            return new VideoTag[] { VideoTag.WITH_VOCAL };
+            return new ArrayList<>(Arrays.asList(VideoTag.WITH_VOCAL));
         } else {
-            return new VideoTag[] { VideoTag.OFF_VOCAL };
+            return new ArrayList<>(Arrays.asList(VideoTag.OFF_VOCAL));
         }
-    } 
+    }
+    
+    public Float percentageFinished() {
+    	if (timesPlayed == 0 || timesFinished == 0) {
+    		return null;
+    	}
+    	return (float)timesFinished/(float)timesPlayed;
+    }
 }

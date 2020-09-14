@@ -20,7 +20,7 @@ public final class InvidiousVideoSearchDataProvider implements VideoSearchDataPr
     		return new ArrayList<Video>();
     	}
     	
-    	String url = String.format("https://www.invidio.us/api/v1/search?q=%s&page=%d", query, page);
+    	String url = String.format("https://www.invidio.us/api/v1/search?q=%s ktv&page=%d", query, page);
     	Request request = new Request.Builder()
     		.url(url)
     		.method("GET", null)

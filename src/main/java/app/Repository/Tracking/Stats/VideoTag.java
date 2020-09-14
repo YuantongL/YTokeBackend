@@ -8,6 +8,14 @@ public enum VideoTag {
     private String stringValue;
 
     VideoTag(String stringValue) {
-        this.stringValue = stringValue;
+        this.setStringValue(stringValue);
     }
+
+	public String getStringValue() {
+		return stringValue;
+	}
+
+	public void setStringValue(String stringValue) {
+		this.stringValue = stringValue;
+	}
 }
