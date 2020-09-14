@@ -4,6 +4,8 @@ package app.Servlet.Videos;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import app.Repository.Videos.Video.VideoThumbnails;
+
 public final class VideosServletResult {
     
     public String q;
@@ -20,6 +22,7 @@ public final class VideosServletResult {
     	public String videoId;
     	public List<String> tags;
     	public Float percentageFinished; 
+    	public List<VideoThumbnails> thumbnails; 
 
     	Video(app.Repository.Videos.Video video) {
     		this.title = video.name;
@@ -28,6 +31,7 @@ public final class VideosServletResult {
     			this.tags = video.stats.tags().stream().map(tag -> tag.getStringValue()).collect(Collectors.toList());
     			this.percentageFinished = video.stats.percentageFinished();
     		}
+    		this.thumbnails = video.thumbnails;
     	}
     }
 }
