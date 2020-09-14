@@ -14,7 +14,7 @@ Some sample request includes:
 
 When a client asks the backend for videos, it asks the Invidious API (will be closed on October 1st, we will have to switch to something else) for Youtube video search, and then query the database for video statistics, it then combine those results and return to the client.
 
-## Run and debug on locally
+## Run and debug locally
 
 Since this is a Maven Java application, to run the application locally, use the [Maven App Engine
 plugin](https://cloud.google.com/appengine/docs/java/tools/using-maven).
