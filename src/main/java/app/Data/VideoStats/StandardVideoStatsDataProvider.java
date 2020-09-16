@@ -30,8 +30,10 @@ public final class StandardVideoStatsDataProvider implements VideoStatsDataProvi
 			throw new VideoStatsDataProviderNoSuchVideoException("Did not find video stats with given id");
 		}
 
-		return new VideoStats(entity.getLong("timesPlayed"), entity.getLong("timesFinished"),
-				entity.getLong("timesMarkedOffVocal"), entity.getLong("timesMarkedWithVocal"));
+		return new VideoStats(entity.getLong("timesPlayed"), 
+				entity.getLong("timesFinished"),
+				entity.getLong("timesMarkedOffVocal"), 
+				entity.getLong("timesMarkedWithVocal"));
 	}
 
 	public List<Video> fetchStats(final List<Video> videos) throws Exception {
@@ -67,8 +69,10 @@ public final class StandardVideoStatsDataProvider implements VideoStatsDataProvi
 		while (entities.hasNext()) {
 			Entity entity = entities.next();
 			result.put(entity.getString("videoId"),
-					new VideoStats(entity.getLong("timesPlayed"), entity.getLong("timesFinished"),
-							entity.getLong("timesMarkedOffVocal"), entity.getLong("timesMarkedWithVocal")));
+					new VideoStats(entity.getLong("timesPlayed"), 
+							entity.getLong("timesFinished"),
+							entity.getLong("timesMarkedOffVocal"), 
+							entity.getLong("timesMarkedWithVocal")));
 		}
 		return result;
 	}
