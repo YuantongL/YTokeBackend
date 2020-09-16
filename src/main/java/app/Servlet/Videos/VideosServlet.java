@@ -18,35 +18,36 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public final class VideosServlet extends HttpServlet {
 
-    private VideosRepository videosRepository = new StandardVideosRepository(new StandardVideoStatsDataProvider(), 
-    																		 new InvidiousVideoSearchDataProvider());
+	private VideosRepository videosRepository = new StandardVideosRepository(new StandardVideoStatsDataProvider(),
+			new InvidiousVideoSearchDataProvider());
 
-    @Override
-    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-    	
-    	String query = req.getParameter("q");
-    	
-    	int page = 0;
-    	try {
-    		page = Integer.parseInt(req.getParameter("page"));
-    	} catch(Exception e) {}
-    	
-        try {
-        	List<Video> videoResult = videosRepository.search(query, page);
-            VideosServletResult result = new VideosServletResult("query", videoResult);
-            ObjectMapper mapper = new ObjectMapper();
-            String json = mapper.writeValueAsString(result);
-            resp.setContentType("application/json");
-            resp.setCharacterEncoding("UTF-8");
-            resp.getWriter().print(json);
-            resp.getWriter().flush();
-        } catch (NumberFormatException e) {
-        	e.printStackTrace();
-        	resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
-        } catch (Exception e) {
-            e.printStackTrace();
-            resp.sendError(HttpServletResponse.SC_NOT_FOUND);
-        }
+	@Override
+	public void doGet(final HttpServletRequest req, final HttpServletResponse resp) throws IOException {
 
-    }
+		String query = req.getParameter("q");
+
+		int page = 0;
+		try {
+			page = Integer.parseInt(req.getParameter("page"));
+		} catch (Exception e) {
+		}
+
+		try {
+			List<Video> videoResult = videosRepository.search(query, page);
+			VideosServletResult result = new VideosServletResult("query", videoResult);
+			ObjectMapper mapper = new ObjectMapper();
+			String json = mapper.writeValueAsString(result);
+			resp.setContentType("application/json");
+			resp.setCharacterEncoding("UTF-8");
+			resp.getWriter().print(json);
+			resp.getWriter().flush();
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+			resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
+		} catch (Exception e) {
+			e.printStackTrace();
+			resp.sendError(HttpServletResponse.SC_NOT_FOUND);
+		}
+
+	}
 }
