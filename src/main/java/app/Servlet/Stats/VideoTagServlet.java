@@ -18,6 +18,11 @@ public final class VideoTagServlet extends HttpServlet {
 
 	@Override
 	public void doPost(final HttpServletRequest req, final HttpServletResponse resp) throws IOException {
+		if (!req.getHeader("User-Agent").contains("YToke~")) {
+			resp.sendError(HttpServletResponse.SC_FORBIDDEN);
+			return;
+		}
+		
 		String videoId = req.getParameter("videoId");
 		String tag = req.getParameter("tag");
 		if (videoId.isEmpty() || tag.isEmpty()) {

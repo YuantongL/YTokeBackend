@@ -23,6 +23,10 @@ public final class VideosServlet extends HttpServlet {
 
 	@Override
 	public void doGet(final HttpServletRequest req, final HttpServletResponse resp) throws IOException {
+		if (!req.getHeader("User-Agent").contains("YToke~")) {
+			resp.sendError(HttpServletResponse.SC_FORBIDDEN);
+			return;
+		}
 
 		String query = req.getParameter("q");
 
