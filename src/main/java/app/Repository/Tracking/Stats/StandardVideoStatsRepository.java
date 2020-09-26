@@ -22,9 +22,9 @@ public final class StandardVideoStatsRepository implements VideoStatsRepository 
 			dataProvider.save(id, existingStats);
 		} catch (VideoStatsDataProviderNoSuchVideoException e) {
 			if (percentage > 0.6) {
-				dataProvider.save(id, new VideoStats(1, 1, 1, 0));
+				dataProvider.save(id, new VideoStats(1, 1, 0, 0));
 			} else {
-				dataProvider.save(id, new VideoStats(1, 0, 1, 0));
+				dataProvider.save(id, new VideoStats(1, 0, 0, 0));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
