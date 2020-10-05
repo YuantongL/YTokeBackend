@@ -20,8 +20,11 @@ public final class InvidiousVideoSearchDataProvider implements VideoSearchDataPr
 			return new ArrayList<Video>();
 		}
 
-		String url = String.format("https://www.invidio.us/api/v1/search?q=%s ktv&page=%d", query, page);
-		Request request = new Request.Builder().url(url).method("GET", null).build();
+		String url = String.format("https://invidious.snopyta.org/api/v1/search?q=%s ktv&page=%d", query, page);
+		Request request = new Request.Builder()
+				.url(url)
+				.method("GET", null)
+				.build();
 		Response response = client.newCall(request).execute();
 		String responseString = response.body().string();
 		List<InvidiousVideo> invidiousResponse = objectMapper.readValue(responseString,
