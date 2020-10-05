@@ -27,9 +27,11 @@ public final class VideoStats {
 	public List<VideoTag> tags() {
 		if (timesMarkedWithVocal > timesMarkedOffVocal) {
 			return new ArrayList<>(Arrays.asList(VideoTag.WITH_VOCAL));
-		} else {
+		} else if (timesMarkedWithVocal < timesMarkedOffVocal) {
 			return new ArrayList<>(Arrays.asList(VideoTag.OFF_VOCAL));
-		}
+		} else {
+            return new ArrayList<>();
+        }
 	}
 
 	public Float percentageFinished() {
