@@ -38,7 +38,7 @@ public final class VideosServlet extends HttpServlet {
 
 		try {
 			List<Video> videoResult = videosRepository.search(query, page);
-			VideosServletResult result = new VideosServletResult("query", videoResult);
+			VideosServletResult result = new VideosServletResult(query, videoResult);
 			ObjectMapper mapper = new ObjectMapper();
 			String json = mapper.writeValueAsString(result);
 			resp.setContentType("application/json");
